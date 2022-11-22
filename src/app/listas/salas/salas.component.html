@@ -1,0 +1,25 @@
+
+<div class="container">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Numero</th>
+      <th>Nombre sala</th>
+      <th>Precio</th>
+      <th>Acciones</th>
+    </tr >
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todoList">
+      <td>{{todo.id}}</td>
+        <td>{{todo.title}}</td>
+        <td>Hola</td>
+        <td>
+          <button type="button" class="btn btn-link" (click)="editTodo(todo)">Actualizar</button>
+          <button type="button" class="btn btn-link" (click)="deleteTodo(todo.id)">Eliminar</button>
+        </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+

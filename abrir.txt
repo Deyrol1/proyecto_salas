@@ -1,0 +1,1 @@
+npx json-server --watch -p 3000 ./src/app/data.json

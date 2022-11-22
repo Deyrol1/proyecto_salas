@@ -1,0 +1,46 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button color="white" (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+
+
+
+
+
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav  [(opened)]="opened" [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+
+
+        <mat-accordion mat-list-item [routerLink]="nav.route" *ngFor="let nav;index as i; of fillerNav">
+          <mat-expansion-panel hideToggle >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon>{{ nav.icon }}</mat-icon>
+                <label>{{ nav.name }}</label>
+
+
+              </mat-panel-title>
+            </mat-expansion-panel-header >
+            <a mat-list-item [routerLink]="navs.route" *ngFor="let navs of nav.submenu">
+              <mat-icon>{{ navs.icon }}</mat-icon>
+              {{ navs.name}}</a>
+
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+

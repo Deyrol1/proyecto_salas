@@ -1,0 +1,19 @@
+
+  <mat-form-field appearance="fill">
+    <label>Id</label>
+    <input matInput  [(ngModel)]="id" placeholder="Ejemplo: miau@gmail.com"
+           required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label>Nombre sala</label>
+    <input matInput  [(ngModel)]="nombre" placeholder="Ejemplo: miau@gmail.com"
+           required>
+  </mat-form-field>
+
+
+  <mat-divider></mat-divider>
+
+  <button mat-raised-button color="primary" (click)="createTodo()">Crear sala</button>
+
+
+
