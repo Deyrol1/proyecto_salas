@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudHttpService } from 'src/app/crud-http.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-salas',
@@ -10,11 +12,24 @@ export class SalasComponent implements OnInit {
   title = 'angular-service-app';
 
   todoList:any = [];
+  todoUsers:any = [];
 
-  constructor(private crudHttpService: CrudHttpService){}
+  constructor(private crudHttpService: CrudHttpService,  private route: ActivatedRoute){}
 
+  id:any =''
   ngOnInit(): void {
+    this.id=this.route.snapshot.paramMap.get("id");
     this.listsalas();
+    this.listusers();
+    console.log(this.todoUsers)
+  }
+
+  listusers(){
+    this.crudHttpService.listusers(this.id).subscribe((response)=>{
+      this.todoUsers =(response)
+      console.log(this.todoList)
+    },(error=>{
+    }));
   }
 
   listsalas(){
@@ -22,25 +37,15 @@ export class SalasComponent implements OnInit {
       this.todoList = response;
     },(error=>{
 
-    }));
-  }
-
-  createTodo(){
-    let todo = {
-      id: new Date().getTime(),
-      title:`Some Todo`
-    }
-    this.crudHttpService.create(todo).subscribe((response)=>{
-      this.listsalas();
-    },(error=>{
 
     }));
   }
+
+
 
   editTodo(todo: any){
     let data = {
-      id: '123454',
-      title:`Some Todo`
+      title:`Sala Nro 1`,
     }
     this.crudHttpService.update(todo.id,data).subscribe((response)=>{
       this.listsalas();

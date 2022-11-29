@@ -30,8 +30,7 @@ export class SidevarComponent implements OnInit {
     {name:"Jugar", route: "jugar", icon: "home"},
     {name:"Usuarios", icon: "person",
       submenu:[
-        {name:"registrar usuario", route: "registro", icon:"add"},
-        {name:"lista usuarios", route: "listado", icon:"person"},
+        {name:"lista usuarios", route: "usuariosgeneral", icon:"person"},
       ]},
     {name:"Salas",icon: "point_of_sale",
       submenu:[

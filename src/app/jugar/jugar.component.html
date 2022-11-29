@@ -1,37 +1,31 @@
 <mat-grid-list cols="2" rowHeight="2:1">
-  <mat-grid-tile *ngFor="let todo of todoList">
+  <mat-grid-tile *ngFor="let todo of todoList; index as i"  >
     <mat-card class="example-card" >
       <mat-card-header>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        <mat-card-title>{{ todo.title }}</mat-card-title>
+        <mat-card-subtitle>{{ todo.usuario_id }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <p>This card indeterminates progress bar.</p>
         <p>{{longText}}</p>
       </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+      <mat-card-actions class="botones">
+        <button mat-button ><a [routerLink]="['/ruleta',  todo.id ]" >JUGAR</a></button>
+        <br>
+        <button mat-button ><a [routerLink]="['/registro-usuario',  todo.id ]" >Registrar usuario</a></button>
+        <button mat-button ><a [routerLink]="['/lista-usuario',  todo.id ]" >Lista de usuarios</a></button>
+        
       </mat-card-actions>
+      <mat-divider></mat-divider>
+    
+    <label>Total personas en sala: {{users[i].cantidad  }} </label>
+
+    <br>
+    <label>Total recaudado: {{users[i].ganancia  }}</label>
     </mat-card>
+    
   </mat-grid-tile>
 
+ 
+
 </mat-grid-list>
-
-<ngx-wheel class="hola"
-
-  width='600',
-  height='600'
-  [disableSpinOnClick]='true'
-  [items]='items'
-  [innerRadius]='50'
-  [spinAmount]='10'
-  [textOrientation]='textOrientation'
-  [textAlignment]='textAlignment'
-  pointerStrokeColor='red'
-  pointerFillColor='purple'
-  [idToLandOn]='idToLandOn'
-  (onSpinStart)='before()'
-  (onSpinComplete)='after()'
->
-</ngx-wheel>

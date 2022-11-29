@@ -20,7 +20,11 @@ import {MatButtonModule} from '@angular/material/button';
 import { JugarComponent } from './jugar/jugar.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { NgxWheelModule } from 'ngx-wheel';
+import { UsuarioComponent } from './agregar/usuario/usuario.component';
+import { ListusuarioComponent } from './listas/listusuario/listusuario.component';
+import { UsuariosgeneralComponent } from './listas/usuariosgeneral/usuariosgeneral.component';
+import { RuletaComponent } from './jugar/ruleta/ruleta.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +32,10 @@ import { NgxWheelModule } from 'ngx-wheel';
     SalasComponent,
     SalaComponent,
     JugarComponent,
+    UsuarioComponent,
+    ListusuarioComponent,
+    UsuariosgeneralComponent,
+    RuletaComponent,
 
   ],
   imports: [
@@ -45,7 +53,11 @@ import { NgxWheelModule } from 'ngx-wheel';
     MatButtonModule,
     MatCardModule,
     MatGridListModule,
-    NgxWheelModule
+   
+    
+
+
+
 
 
 

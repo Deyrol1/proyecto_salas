@@ -1,25 +1,13 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { CrudHttpService } from '../crud-http.service';
-import { NgxWheelComponent, TextAlignment, TextOrientation } from 'ngx-wheel'
 
+import { ActivatedRoute } from "@angular/router";
 @Component({
   selector: 'app-jugar',
   templateUrl: './jugar.component.html',
   styleUrls: ['./jugar.component.sass']
 })
 export class JugarComponent implements OnInit {
-
-  @ViewChild(NgxWheelComponent, { static: false }) wheel:any;
-
-  seed = [...Array(12).keys()]
-  idToLandOn: any;
-  items!: any[];
-  textOrientation: TextOrientation = TextOrientation.HORIZONTAL
-  textAlignment: TextAlignment = TextAlignment.OUTER
-
-
-
-
 
 
 
@@ -31,57 +19,50 @@ export class JugarComponent implements OnInit {
 
   todoList:any = [];
 
-  constructor(private crudHttpService: CrudHttpService){}
+  constructor(private crudHttpService: CrudHttpService, private route: ActivatedRoute){}
 
+
+  id:any =""
   ngOnInit(): void {
+    this.id=this.route.snapshot.paramMap.get("id");
     this.listsalas();
-    this.idToLandOn = this.seed[Math.floor(Math.random() * this.seed.length)];
-    const colors = ['#FF0000', '#000000']
-    this.items = this.seed.map((value) => ({
-      fillStyle: colors[value % 2],
-      text: `Prize ${value}`,
-      id: value,
-      textFillStyle: 'white',
-      textFontSize: '16',
-      width:'600',
-      height:'600'
-    }))
-
-
-
-
-  }
-
-  reset() {
-    this.wheel.reset()
-  }
-  before() {
-    alert('Your wheel is about to spin')
-  }
-
-  async spin(prize:any) {
-    this.idToLandOn = prize
-    await new Promise(resolve => setTimeout(resolve, 0));
-    this.wheel.spin()
-  }
-
-  after() {
-    alert('You have been bamboozled')
+   
+    
   }
 
 
 
 
+  index:any = [];
+  users:any = [];
+  
 
 
 
-
-
-
-
-  listsalas(){
+listsalas(){
     this.crudHttpService.list().subscribe((response)=>{
       this.todoList = response;
+      for(let i = 0 ; i < Object.entries(response).length ; i++){
+        let valor={
+          "id":this.todoList[i].id,
+          "valor":this.todoList[i].precio
+        }
+        this.index.push(valor);
+
+        console.log("idex",this.index[i].id)
+        this.crudHttpService.listusers(this.index[i].id).subscribe((response)=>{
+          console.log("este es el response",Object.entries(response).length)
+          let cantidad={
+            "cantidad":Object.entries(response).length,
+            "ganancia":(this.index[i].valor*Object.entries(response).length)
+          }
+          this.users.push(cantidad)
+        },(error=>{
+        }));
+
+    }
+
+      
     },(error=>{
 
     }));

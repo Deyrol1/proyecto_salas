@@ -1,8 +1,26 @@
 {
   "salas": [
     {
-      "id": 1,
-      "title": ""
+      "id": 2,
+      "title": "",
+      "precio": 2000
+    },
+    {
+      "id": 3,
+      "title": "",
+      "precio": 3000
+    }
+  ],
+  "usuario": [
+    {
+      "nombre": "Juanito",
+      "salaId": 2,
+      "id": 1
+    },
+    {
+      "nombre": "Juanito",
+      "salaId": 3,
+      "id": 2
     }
   ]
 }

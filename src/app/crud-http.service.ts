@@ -9,7 +9,10 @@ import { Observable, throwError } from 'rxjs';
 export class CrudHttpService {
 
   apiUrl: string = 'http://localhost:3000/salas';
+  apiUsuario: string = 'http://localhost:3000/usuario';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
+  link:string = 'http://localhost:3000/usuario?salaId=';
+
 
   constructor(private http: HttpClient) { }
 
@@ -55,5 +58,35 @@ export class CrudHttpService {
     return throwError(
       'Something bad happened; please try again later.');
   };
+
+
+
+  createuser(data: any): Observable<any> {
+    let API_URL = `${this.apiUsuario}`;
+    return this.http.post(API_URL, data)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+
+  links:string=''
+
+  listusers(id: any) {
+    this.links=this.link+id
+    return this.http.get(`${this.links}`);
+    
+  }
+ 
+
+  ususariosgeneral(){
+    return this.http.get(`${this.apiUsuario}`);
+  }
+
+  deleteusuario(id: any): Observable<any> {
+    var API_URL = `${this.apiUsuario}/${id}`;
+    return this.http.delete(API_URL).pipe(
+      catchError(this.handleError)
+    )
+  }
 
 }
