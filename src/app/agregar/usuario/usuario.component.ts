@@ -15,6 +15,8 @@ export class UsuarioComponent implements OnInit {
   cedula:string=""
   nombre:string=""
 
+  correo:string=""
+  contrasena:string=""
   constructor(private crudHttpService: CrudHttpService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -38,8 +40,11 @@ export class UsuarioComponent implements OnInit {
   actuusuario(){
 
     let data={
-        nombre:`Juanito`,
-        salaId: parseInt(this.id)
+        nombre:this.nombre,
+        salaId: parseInt(this.id),
+        correo:this.correo,
+        contrasena:this.contrasena,
+        cedula:this.cedula
     }
     this.crudHttpService.createuser(data).subscribe((response)=>{
       this.listsalas();

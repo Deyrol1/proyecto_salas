@@ -1,25 +1,18 @@
 {
   "salas": [
     {
-      "id": 2,
-      "title": "",
+      "id": 1,
+      "title": "sala 2",
+      "capacidad": 30,
       "precio": 2000
-    },
-    {
-      "id": 3,
-      "title": "",
-      "precio": 3000
     }
   ],
   "usuario": [
     {
-      "nombre": "Juanito",
-      "salaId": 2,
-      "id": 1
-    },
-    {
-      "nombre": "Juanito",
-      "salaId": 3,
+      "cedula": "12714",
+      "nombre": "deyrol",
+      "correo": "12815",
+      "conrasena": "3232",
       "id": 2
     }
   ]

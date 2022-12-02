@@ -9,18 +9,17 @@
   <input matInput  [(ngModel)]="nombre" placeholder="Nombre"
          required>
 </mat-form-field>
-
+<mat-form-field appearance="fill">
+  <label>Correo</label>
+  <input matInput  [(ngModel)]="correo" placeholder="correo"
+         required>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <label>Contrasena</label>
+  <input matInput  [(ngModel)]="contrasena" placeholder="Contrasena"
+         required>
+</mat-form-field>
 
 <mat-divider></mat-divider>
 
 <button mat-raised-button color="primary"><a (click)="actuusuario()">Añadir usuario</a></button>
-
-
-
-
-<br>
-
-
-<label>Numero de sala: {{ id }}</label>
-<br>
-<label>Nombre usuario: {{ "hola" }}</label>

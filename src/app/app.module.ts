@@ -24,6 +24,8 @@ import { UsuarioComponent } from './agregar/usuario/usuario.component';
 import { ListusuarioComponent } from './listas/listusuario/listusuario.component';
 import { UsuariosgeneralComponent } from './listas/usuariosgeneral/usuariosgeneral.component';
 import { RuletaComponent } from './jugar/ruleta/ruleta.component';
+import { EditsalaComponent } from './editar/editsala/editsala.component';
+import { EditusuarioComponent } from './editar/editusuario/editusuario.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { RuletaComponent } from './jugar/ruleta/ruleta.component';
     ListusuarioComponent,
     UsuariosgeneralComponent,
     RuletaComponent,
+    EditsalaComponent,
+    EditusuarioComponent,
 
   ],
   imports: [

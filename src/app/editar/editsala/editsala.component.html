@@ -2,17 +2,17 @@
 
   <mat-form-field appearance="fill">
     <label>Nombre sala</label>
-    <input matInput  [(ngModel)]="nombre"  placeholder="Ejemplo: miau@gmail.com" 
+    <input matInput  [(ngModel)]="datos[0].title"  placeholder="Ejemplo: miau@gmail.com" 
            required>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <label>Capacidad</label>
-    <input matInput  [(ngModel)]="capacidad" placeholder="Capacidad"
+    <input matInput  [(ngModel)]="datos[0].capacidad" placeholder="Capacidad"
            required>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <label>Precio</label>
-    <input matInput  [(ngModel)]="precio" placeholder="Precio"
+    <input matInput  [(ngModel)]="datos[0].precio" placeholder="Precio"
            required>
   </mat-form-field>
 

@@ -12,6 +12,8 @@ export class CrudHttpService {
   apiUsuario: string = 'http://localhost:3000/usuario';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   link:string = 'http://localhost:3000/usuario?salaId=';
+  sala:string = 'http://localhost:3000/salas?id=';
+  usuario:string = 'http://localhost:3000/usuario?id=';
 
 
   constructor(private http: HttpClient) { }
@@ -37,6 +39,16 @@ export class CrudHttpService {
       catchError(this.handleError)
     )
   }
+
+
+    // Update
+    updateuser(id: any, data: any): Observable<any> {
+      let API_URL = `${this.apiUsuario}/${id}`;
+      return this.http.put(API_URL, data, { headers: this.headers }).pipe(
+        catchError(this.handleError)
+      )
+    }
+
 
   // Delete
   delete(id: any): Observable<any> {
@@ -89,4 +101,15 @@ export class CrudHttpService {
     )
   }
 
+  salas:string=''
+  datossala(id:any): Observable<any>{
+    this.salas=this.sala+id
+    return this.http.get(`${this.salas}`);
+  }
+
+  users:string=''
+  datosuser(id:any): Observable<any>{
+    this.users=this.usuario+id
+    return this.http.get(`${this.users}`);
+  }
 }

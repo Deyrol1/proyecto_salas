@@ -1,20 +1,15 @@
-import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+
+import { ActivatedRoute, Router } from '@angular/router';
 import { CrudHttpService } from 'src/app/crud-http.service';
 
+
 @Component({
-  selector: 'app-sala',
-  templateUrl: './sala.component.html',
-  styleUrls: ['./sala.component.sass']
+  selector: 'app-editsala',
+  templateUrl: './editsala.component.html',
+  styleUrls: ['./editsala.component.sass']
 })
-export class SalaComponent implements OnInit {
-
-  id:string='';
-  nombre:string='';
-
-  capacidad:string =''
-  precio:string =''
+export class EditsalaComponent implements OnInit {
 
   todoList:any = [];
 
@@ -24,6 +19,7 @@ export class SalaComponent implements OnInit {
     },(error=>{
 
     }));
+    this.router.navigate(['salas']);
   }
 
 
@@ -31,16 +27,20 @@ export class SalaComponent implements OnInit {
 
   createTodo(){
     let todo = {
-      id: this.id,
-      title:this.nombre,
-      capacidad:parseInt(this.capacidad),
-      precio:parseInt(this.precio)
+    
+      
+      title:this.datos[0].title,
+      capacidad:parseInt(this.datos[0].capacidad),
+      precio:parseInt(this.datos[0].precio)
     }
-    this.crudHttpService.create(todo).subscribe((response)=>{
+    this.crudHttpService.update(this.idsala,todo).subscribe((response)=>{
       this.listsalas();
     },(error=>{
 
     }));
+
+  
+
   }
 
   datos:any=[];
@@ -56,7 +56,7 @@ export class SalaComponent implements OnInit {
   }
 
 
-  constructor(private crudHttpService: CrudHttpService, private route: ActivatedRoute) { }
+  constructor(private crudHttpService: CrudHttpService, private route: ActivatedRoute, private router:Router) { }
 
   idsala:any=''
   ngOnInit(): void {
@@ -64,5 +64,4 @@ export class SalaComponent implements OnInit {
     this.sala();
     
   }
-
 }

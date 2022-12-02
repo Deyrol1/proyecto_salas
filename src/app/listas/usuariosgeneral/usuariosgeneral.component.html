@@ -5,6 +5,8 @@
         <tr>
           <th>Id</th>
           <th>Nombre</th>
+          <th>Cedula</th>
+          <th>Correo</th>
           <th>Acciones</th>
         </tr >
       </thead>
@@ -13,9 +15,11 @@
           
           <td> {{todo.id}}  </td>
             <td>{{todo.nombre}}</td>
+            <td>{{todo.cedula}}</td>
+            <td>{{todo.correo}}</td>
            
             <td>
-              <button type="button" class="btn btn-link" (click)="editTodo(todo)">Actualizar</button>
+              <button type="button" class="btn btn-link"><a [routerLink]="['/actu-usuario',  todo.id ]" >editar usuario</a></button>
               <button type="button" class="btn btn-link" (click)="deleteTodo(todo.id)">Eliminar</button>
             </td>
         </tr>

@@ -1,0 +1,26 @@
+
+<mat-form-field appearance="fill">
+    <label>Cedula:</label>
+    <input matInput  [(ngModel)]="datos[0].cedula" placeholder="Cedula"
+           required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label>Nombre</label>
+    <input matInput  [(ngModel)]="datos[0].nombre" placeholder="Nombre"
+           required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label>Correo</label>
+    <input matInput  [(ngModel)]="datos[0].correo" placeholder="correo"
+           required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label>Contrasena</label>
+    <input matInput  [(ngModel)]="datos[0].contrasena" placeholder="Contrasena"
+           required>
+  </mat-form-field>
+  
+  <mat-divider></mat-divider>
+  
+  <button mat-raised-button color="primary"><a (click)="createTodo()">Editar usuario</a></button>
+  
