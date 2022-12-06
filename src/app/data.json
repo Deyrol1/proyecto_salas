@@ -50,5 +50,13 @@
     }
   ],
   "ganador": [
+    {
+      "nombre": "alvarez",
+      "salaId": 1,
+      "correo": "121",
+      "contrasena": "82517",
+      "cedula": "123",
+      "id": 1
+    }
   ]
 }

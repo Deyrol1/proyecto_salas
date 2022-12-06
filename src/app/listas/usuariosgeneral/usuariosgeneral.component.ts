@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudHttpService } from 'src/app/crud-http.service';
-import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-usuariosgeneral',
@@ -43,7 +43,7 @@ export class UsuariosgeneralComponent implements OnInit {
  
 
 
-  constructor(private crudHttpService: CrudHttpService,  private route: ActivatedRoute) { }
+  constructor(private crudHttpService: CrudHttpService) { }
 
   ngOnInit(): void {
     this.listsalas();
