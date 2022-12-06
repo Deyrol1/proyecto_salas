@@ -1,14 +1,14 @@
     <mat-grid-list cols="5" rowHeight="2:1">
-      <mat-grid-tile *ngFor="let todo of todoList; index as i">
+      <div *ngFor="let todo of todoList">
+      <mat-grid-tile>
         <mat-card class="example-card" >
           <mat-card-header>
-            <mat-card-title>Usuario: {{ todo.nombre }}</mat-card-title>
+            <mat-card-title>Usuario: {{ todo.usuario.nombre}}</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <p> Numero asignado: {{i+1}} </p>
-            
+            <p> Numero asignado: {{todo.usuario.id }} </p>
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
-    
+    </div>
     </mat-grid-list>

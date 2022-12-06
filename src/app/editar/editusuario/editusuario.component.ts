@@ -29,6 +29,7 @@ export class EditusuarioComponent implements OnInit {
       nombre:this.datos[0].nombre,
       correo:this.datos[0].correo,
       conrasena:this.datos[0].contrasena,
+      sala: this.datos[0].salaId
     }
     this.crudHttpService.updateuser(this.idsala,todo).subscribe((response)=>{
       this.listsalas();

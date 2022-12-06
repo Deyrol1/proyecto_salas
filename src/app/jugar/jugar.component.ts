@@ -12,11 +12,6 @@ export class JugarComponent implements OnInit {
 
 
 
-
-  longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
-  from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
-  originally bred for hunting.`;
-
   todoList:any = [];
 
   constructor(private crudHttpService: CrudHttpService, private route: ActivatedRoute){}
@@ -25,7 +20,7 @@ export class JugarComponent implements OnInit {
   id:any =""
   ngOnInit(): void {
     this.id=this.route.snapshot.paramMap.get("id");
-    this.listsalas();
+   this.listsalas()
    
     
   }
@@ -33,10 +28,11 @@ export class JugarComponent implements OnInit {
 
 
 
+
+
+
   index:any = [];
   users:any = [];
-  
-
 
 
 listsalas(){
@@ -66,6 +62,8 @@ listsalas(){
     },(error=>{
 
     }));
+
+  
   }
 
 

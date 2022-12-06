@@ -1,19 +1,54 @@
 {
   "salas": [
     {
-      "id": 1,
       "title": "sala 2",
+      "capacidad": 32,
+      "precio": 2000,
+      "id": 1
+    },
+    {
+      "title": "sala 3",
+      "capacidad": 32,
+      "precio": 2000,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "title": "miau",
       "capacidad": 30,
-      "precio": 2000
+      "precio": 25000
     }
   ],
-  "usuario": [
+  "usuarios": [
     {
-      "cedula": "12714",
-      "nombre": "deyrol",
-      "correo": "12815",
-      "conrasena": "3232",
+      "nombre": "juanito",
+      "salaId": 1,
+      "correo": "128651",
+      "contrasena": "26152",
+      "cedula": "123",
       "id": 2
+    },
+    {
+      "nombre": "alvarez",
+      "salaId": 1,
+      "correo": "121",
+      "contrasena": "82517",
+      "cedula": "123",
+      "id": 3
     }
+  ],
+  "usuarioysala": [
+    {
+      "usuarioId": 2,
+      "salaId": 1,
+      "id": 2
+    },
+    {
+      "usuarioId": 3,
+      "salaId": 1,
+      "id": 3
+    }
+  ],
+  "ganador": [
   ]
 }

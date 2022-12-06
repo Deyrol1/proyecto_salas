@@ -8,7 +8,7 @@
           <th>Cedula</th>
           <th>Correo</th>
           <th>Nro sala</th>
-          <th>Acciones</th>
+    
         </tr >
       </thead>
       <tbody>
@@ -20,10 +20,7 @@
             <td>{{todo.correo}}</td>
             <td>{{todo.salaId}}</td>
            
-            <td>
-              <button type="button" class="btn btn-link"><a [routerLink]="['/actu-usuario',  todo.id ]" >editar usuario</a></button>
-              <button type="button" class="btn btn-link" (click)="deleteTodo(todo.id)">Eliminar</button>
-            </td>
+      
         </tr>
       </tbody>
     </table>

@@ -9,11 +9,13 @@ import { Observable, throwError } from 'rxjs';
 export class CrudHttpService {
 
   apiUrl: string = 'http://localhost:3000/salas';
-  apiUsuario: string = 'http://localhost:3000/usuario';
+  apiUsuario: string = 'http://localhost:3000/usuarios';
+  apijugador:string = 'http://localhost:3000/usuarioysala';
+  apiganador: string = 'http://localhost:3000/ganador';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
-  link:string = 'http://localhost:3000/usuario?salaId=';
+  link:string = 'http://localhost:3000/usuarioysala?salaId=';
   sala:string = 'http://localhost:3000/salas?id=';
-  usuario:string = 'http://localhost:3000/usuario?id=';
+  usuario:string = 'http://localhost:3000/usuarios?id=';
 
 
   constructor(private http: HttpClient) { }
@@ -83,8 +85,9 @@ export class CrudHttpService {
 
   links:string=''
 
+  palabra:string="&_expand=usuario"
   listusers(id: any) {
-    this.links=this.link+id
+    this.links=this.link+id+this.palabra
     return this.http.get(`${this.links}`);
     
   }
@@ -111,5 +114,27 @@ export class CrudHttpService {
   datosuser(id:any): Observable<any>{
     this.users=this.usuario+id
     return this.http.get(`${this.users}`);
+  }
+
+
+  createwinner(data: any): Observable<any> {
+    let API_URL = `${this.apiganador}`;
+    return this.http.post(API_URL, data)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+
+
+  ganadoresgeneral(){
+    return this.http.get(`${this.apiganador}`);
+  }
+
+  createjugador(data: any): Observable<any> {
+    let API_URL = `${this.apijugador}`;
+    return this.http.post(API_URL, data)
+      .pipe(
+        catchError(this.handleError)
+      )
   }
 }

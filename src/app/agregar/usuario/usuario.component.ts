@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudHttpService } from 'src/app/crud-http.service';
 import { ActivatedRoute } from "@angular/router";
+import  {usuarios}  from 'src/app/clases/usuarios';
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
@@ -31,15 +32,37 @@ export class UsuarioComponent implements OnInit {
     },(error=>{
 
     }));
+    this.registrojugador();
   }
+  jugadores:any = [];
 
+  registrojugador(){
+  
+      this.crudHttpService.ususariosgeneral().subscribe((response)=>{
+        this.jugadores = response;
+        console.log("los jugadores son:",this.jugadores[this.jugadores.length-1])
+        let data={
+          usuarioId:this.jugadores[this.jugadores.length-1].id,
+          salaId: this.jugadores[this.jugadores.length-1].salaId,
+      }
+      this.crudHttpService.createjugador(data).subscribe((response)=>{
+      },(error=>{
+  
+  
+      }));
+      },(error=>{
+  
+  
+      }));
+    
+  }
 
 
 
 
   actuusuario(){
 
-    let data={
+    let data:usuarios={
         nombre:this.nombre,
         salaId: parseInt(this.id),
         correo:this.correo,
@@ -50,5 +73,8 @@ export class UsuarioComponent implements OnInit {
       this.listsalas();
     },(error=>{
     }));
+
+    
+   
   }
 }

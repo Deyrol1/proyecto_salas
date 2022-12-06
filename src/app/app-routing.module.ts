@@ -9,6 +9,7 @@ import { UsuariosgeneralComponent } from './listas/usuariosgeneral/usuariosgener
 import { RuletaComponent } from './jugar/ruleta/ruleta.component';
 import { EditsalaComponent } from './editar/editsala/editsala.component';
 import { EditusuarioComponent } from './editar/editusuario/editusuario.component';
+import { GanadoresComponent } from './listas/ganadores/ganadores.component';
 
 const routes: Routes =
 [
@@ -49,6 +50,10 @@ const routes: Routes =
   {
     path:'actu-usuario/:id',
     component: EditusuarioComponent
+  },
+  {
+    path:'ganadores',
+    component: GanadoresComponent
   }
 ];
 
