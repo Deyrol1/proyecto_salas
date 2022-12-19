@@ -5,25 +5,13 @@
       "capacidad": 32,
       "precio": 2000,
       "id": 1
-    },
-    {
-      "title": "sala 3",
-      "capacidad": 32,
-      "precio": 2000,
-      "id": 2
-    },
-    {
-      "id": 3,
-      "title": "miau",
-      "capacidad": 30,
-      "precio": 25000
     }
   ],
   "usuarios": [
     {
       "nombre": "juanito",
       "salaId": 1,
-      "correo": "128651",
+      "email": "128651",
       "contrasena": "26152",
       "cedula": "123",
       "id": 2
@@ -31,7 +19,7 @@
     {
       "nombre": "alvarez",
       "salaId": 1,
-      "correo": "121",
+      "email": "121",
       "contrasena": "82517",
       "cedula": "123",
       "id": 3
@@ -53,10 +41,43 @@
     {
       "nombre": "alvarez",
       "salaId": 1,
-      "correo": "121",
+      "email": "121",
       "contrasena": "82517",
       "cedula": "123",
       "id": 1
+    },
+    {
+      "nombre": "alvarez",
+      "salaId": 1,
+      "email": "121",
+      "contrasena": "82517",
+      "cedula": "123",
+      "id": 2
+    },
+    {
+      "nombre": "alvarez",
+      "salaId": 1,
+      "email": "121",
+      "contrasena": "82517",
+      "cedula": "123",
+      "id": 3
+    },
+    {
+      "nombre": "alvarez",
+      "salaId": 1,
+      "email": "121",
+      "contrasena": "82517",
+      "cedula": "123",
+      "id": 4
+    },
+    {
+      "nombre": "juanito",
+      "salaId": 1,
+      "email": "128651",
+      "contrasena": "26152",
+      "cedula": "123",
+      "id": 5
     }
-  ]
+  ],
+  "users": []
 }

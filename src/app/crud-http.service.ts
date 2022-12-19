@@ -29,6 +29,8 @@ export class CrudHttpService {
       )
   }
 
+
+
   // Read
   list() {
     return this.http.get(`${this.apiUrl}`);
@@ -110,10 +112,10 @@ export class CrudHttpService {
     return this.http.get(`${this.salas}`);
   }
 
-  users:string=''
+  usuarios:string=''
   datosuser(id:any): Observable<any>{
-    this.users=this.usuario+id
-    return this.http.get(`${this.users}`);
+    this.usuarios=this.usuario+id
+    return this.http.get(`${this.usuarios}`);
   }
 
 

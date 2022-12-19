@@ -58,7 +58,7 @@ export class RuletaComponent implements OnInit {
     let data={
       nombre:this.ganadorfinal.usuario.nombre,
       salaId: parseInt(this.ganadorfinal.usuario.salaId),
-      correo:this.ganadorfinal.usuario.correo,
+      email:this.ganadorfinal.usuario.email,
       contrasena:this.ganadorfinal.usuario.contrasena,
       cedula:this.ganadorfinal.usuario.cedula
   }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { CrudHttpService } from 'src/app/crud-http.service';
-
+import { usuarios } from 'src/app/clases/usuarios';
 @Component({
   selector: 'app-editusuario',
   templateUrl: './editusuario.component.html',
@@ -24,12 +24,12 @@ export class EditusuarioComponent implements OnInit {
 
 
   createTodo(){
-    let todo = {
+    let todo:usuarios = {
       cedula:this.datos[0].cedula,
       nombre:this.datos[0].nombre,
-      correo:this.datos[0].correo,
-      conrasena:this.datos[0].contrasena,
-      sala: this.datos[0].salaId
+      email:this.datos[0].email,
+      contrasena:this.datos[0].contrasena,
+      salaId: this.datos[0].salaId
     }
     this.crudHttpService.updateuser(this.idsala,todo).subscribe((response)=>{
       this.listsalas();

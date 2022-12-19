@@ -21,6 +21,7 @@ export class JugarComponent implements OnInit {
   ngOnInit(): void {
     this.id=this.route.snapshot.paramMap.get("id");
    this.listsalas()
+
    
     
   }
@@ -32,10 +33,11 @@ export class JugarComponent implements OnInit {
 
 
   index:any = [];
-  users:any = [];
+  usuarios:any = [];
 
 
 listsalas(){
+
     this.crudHttpService.list().subscribe((response)=>{
       this.todoList = response;
       for(let i = 0 ; i < Object.entries(response).length ; i++){
@@ -52,7 +54,7 @@ listsalas(){
             "cantidad":Object.entries(response).length,
             "ganancia":(this.index[i].valor*Object.entries(response).length)
           }
-          this.users.push(cantidad)
+          this.usuarios.push(cantidad)
         },(error=>{
         }));
 
@@ -63,8 +65,12 @@ listsalas(){
 
     }));
 
+   
   
   }
+
+
+
 
 
 

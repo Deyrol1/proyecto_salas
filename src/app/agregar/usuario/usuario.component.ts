@@ -16,7 +16,7 @@ export class UsuarioComponent implements OnInit {
   cedula:string=""
   nombre:string=""
 
-  correo:string=""
+  email:string=""
   contrasena:string=""
   constructor(private crudHttpService: CrudHttpService, private route: ActivatedRoute) { }
 
@@ -66,7 +66,7 @@ export class UsuarioComponent implements OnInit {
     let data:usuarios={
         nombre:this.nombre,
         salaId: parseInt(this.id),
-        correo:this.correo,
+        email:this.email,
         contrasena:this.contrasena,
         cedula:this.cedula
     }

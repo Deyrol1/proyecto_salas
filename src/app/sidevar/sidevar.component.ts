@@ -28,7 +28,7 @@ export class SidevarComponent implements OnInit {
 
   fillerNav = [
     {name:"Jugar", route: "jugar", icon: "home"},
-    {name:"Usuarios", icon: "person",
+    {name:"usuarios", icon: "person",
       submenu:[
         {name:"lista usuarios", route: "usuariosgeneral", icon:"person"},
         {name:"lista de ganadores", route: "ganadores", icon:"military_tech"},

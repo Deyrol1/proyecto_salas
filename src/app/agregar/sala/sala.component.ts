@@ -2,7 +2,7 @@ import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CrudHttpService } from 'src/app/crud-http.service';
-
+import { salas } from 'src/app/clases/salas';
 @Component({
   selector: 'app-sala',
   templateUrl: './sala.component.html',
@@ -30,8 +30,7 @@ export class SalaComponent implements OnInit {
 
 
   createTodo(){
-    let todo = {
-      id: this.id,
+    let todo:salas = {
       title:this.nombre,
       capacidad:parseInt(this.capacidad),
       precio:parseInt(this.precio)

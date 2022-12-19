@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { CrudHttpService } from 'src/app/crud-http.service';
-
+import { salas } from 'src/app/clases/salas';
 
 @Component({
   selector: 'app-editsala',
@@ -26,7 +26,7 @@ export class EditsalaComponent implements OnInit {
 
 
   createTodo(){
-    let todo = {
+    let todo:salas = {
     
       
       title:this.datos[0].title,
